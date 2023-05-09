@@ -26,9 +26,10 @@ let display = async () => {
       end += 2;
       // console.log(newarr);
       migration(newarr);
-      while (newarr.length != 0) {
-        newarr.pop();
-      }
+      newarr = [];
+      // while (newarr.length != 0) {
+      //   newarr.pop();
+      // }
     }
     if (response[start] != undefined) newarr.push(response[start]);
     else break;
@@ -44,7 +45,7 @@ let migration = (newarr) => {
     let obj = { subject: element.subject, description: element.description };
     return obj;
   });
-  // console.log(newdata);
+  console.log(newdata);
   var axios = require("axios");
   var data = JSON.stringify({
     tickets: newdata,
